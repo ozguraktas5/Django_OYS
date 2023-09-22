@@ -1,0 +1,11 @@
+<nav>
+    <ul>
+        <li><a href="/">Ana Sayfa</a></li>
+        {% if user.is_authenticated %}
+            <li>Merhaba, {{ user.username }}</li>
+            <li><a href="{% url 'logout' %}">Çıkış Yap</a></li>
+        {% else %}
+            <li><a href="{% url 'login' %}">Giriş Yap</a></li>
+        {% endif %}
+    </ul>
+</nav>
